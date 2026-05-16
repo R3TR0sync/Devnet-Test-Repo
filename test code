@@ -1,0 +1,11 @@
+// Simple Solana devnet connection test
+const { Connection } = require("@solana/web3.js");
+
+const connection = new Connection("https://api.devnet.solana.com");
+
+async function checkConnection() {
+  const version = await connection.getVersion();
+  console.log("Connected to Solana devnet. Version:", version);
+}
+
+checkConnection();
